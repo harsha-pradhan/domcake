@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<style>
+    table,th,td
+    {
+     border:1px solid red;
+    }
+    th,td{
+        padding: 5px;
+    }
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers</title>
+</head>
+<body>
+    <h1>CUSTOMER DETAILS</h1>
+    <button type="button" onclick="loadXML()">SEE CUSTOMER DETAILS</button>
+    <br><br>
+    <table id="harsha_table"></table>
+    <script>
+        function loadXML()
+        {
+            var xhttp=new XMLHttpRequest();
+            xhttp.onreadystatechange=function()
+            {
+                if(this.readyState==4&&this.status==200)
+                {
+                    myFunction(this);
+                }
+            };
+            xhttp.open("GET","cake.xml",true);
+            console.log(xhttp.readyState);
+            xhttp.send();
+        }
+        function myFunction(xml)
+        {
+            var i;
+            var xmlDoc=xml.responseXML;
+            var t="<tr><th>CUSTOMER NAME</th><th>EMAIL</th></tr>";
+            var x=xmlDoc.getElementsByTagName("customer");
+            for(i=0;i<x.length;i++)
+            {
+                t +="<tr><td>" +
+                x[i].getElementsByTagName("customername")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("email")[0].childNodes[0].nodeValue +
+                "</td></tr>";
+            }
+            document.getElementById("harsha_table").innerHTML=t;
+        }
+    </script>
+</body>
+</html> 

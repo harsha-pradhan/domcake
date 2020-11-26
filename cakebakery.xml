@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO8859-1" ?>
+<cakebakery>
+	<customer>
+		<customername>harsha</customername>
+		<email>harsha@gmail.com</email>
+		
+	</customer>
+	<customer>
+		<customername>rohan</customername>
+		<email>rohan123@gmail.com</email>
+		
+	</customer>
+	<customer>
+		<customername>anwesha</customername>
+		<email>anwesha2020@gmail.com</email>
+		
+	</customer>
+	<customer>
+		<customername>robin</customername>
+		<email>robin12gh@gmail.com</email>
+		
+	</customer>
+	<customer>
+		<customername>pradyum</customername>
+		<email>pradyum12d@gmail.com</email>
+		
+	</customer>
+</cakebakery>
